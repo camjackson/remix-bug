@@ -62,5 +62,7 @@ save function. If you take this out, the bug only occurs some of the time.
 
 ## Bug video for the time-poor
 
+At 10 seconds, when navigating to person 2, the blur triggers and the person gets saved, but the loader for the list does not re-run, so the first name in the list does not change. At 12 seconds, you can see that the name in the list and the name on the form have become out of sync. At 13 seconds I refresh the page, which brings the list and the label back in sync. Though the input then goes back to the original value which is even more confusing but I think that's a different bug.
+
 [bug.webm](https://user-images.githubusercontent.com/1930451/183237729-9a84b88f-8e0d-4496-9e8d-b1ed0daaadb9.webm)
 
