@@ -18,7 +18,7 @@ It's a simple list of people, with a form to update the name of each one.
 The routes are:
 
 - `/` : Just shows a link to the people list
-  - `/people` : Shows the list of people, with an <Outlet />
+  - `/people` : Shows the list of people, with an `<Outlet />`
     - `/people/$personId` : Shows a form to edit the given person, alongside the list
 
 The form has no submit button. Instead it uses `useSubmit` to auto-save on every blur event.
@@ -52,3 +52,10 @@ The following interaction does **not** work:
    1. ✅ action has run
    2. ✅ loader has run for the person component
    3. ❌ loader has **not** run for the people component
+
+## What causes it?
+
+It appears that if a remix `<Form>` triggers an action, but unmounts before
+the action finishes, then page's loaders are not refreshed as they should be. To
+make the bug reproduce more reliably, there is an artificial delay in the DB
+save function. If you take this out, the bug only occurs some of the time.
