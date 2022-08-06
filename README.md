@@ -59,3 +59,8 @@ It appears that if a remix `<Form>` triggers an action, but unmounts before
 the action finishes, then page's loaders are not refreshed as they should be. To
 make the bug reproduce more reliably, there is an artificial delay in the DB
 save function. If you take this out, the bug only occurs some of the time.
+
+## Bug video for the time-poor
+
+[bug.webm](https://user-images.githubusercontent.com/1930451/183237729-9a84b88f-8e0d-4496-9e8d-b1ed0daaadb9.webm)
+
